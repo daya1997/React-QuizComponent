@@ -22,15 +22,12 @@ class Quiz extends Component {
 
   render() {
 
-    //let valueA = this.state.quiz_position
-    //let valueB = quizData.quiz_questions.length
-    //const isQuizEnd =  ( (this.state.quiz_position - 1) === quizData.quiz_questions.length ) ? true : false
-    const isQuizEnd = true;
+    const isQuizEnd =  ( (this.state.quiz_position - 1) === quizData.quiz_questions.length ) ? true : false
     return (
 
       <div>
-      { isQuizEnd ? <QuizEnd /> : null }
-      <QuizQuestion quiz_question = {quizData.quiz_questions[this.state.quiz_position-1]}  />
+      { isQuizEnd ? <QuizEnd /> : <QuizQuestion quiz_question = {quizData.quiz_questions[this.state.quiz_position-1]}  /> }
+
       </div>
 
   );
